@@ -1,0 +1,685 @@
+/* ============================================
+   SUPER MARIO BROS — AUTHENTIC ARCADE THEME
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* High-Definition Mario World Landscape Background */
+body.theme-mario {
+  background: url('/images/mario-world-bg.png') center top / cover no-repeat scroll #0b0f19;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  position: relative;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+}
+
+/* Soothing Dark Glass Overlay for Comfort & HD Visual Depth */
+body.theme-mario::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 16, 26, 0.35) 0%, rgba(12, 16, 26, 0.55) 50%, rgba(12, 16, 26, 0.78) 100%);
+  backdrop-filter: contrast(1.08) saturate(1.1);
+  -webkit-backdrop-filter: contrast(1.08) saturate(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- MARIO THEME TYPOGRAPHY & SECTION LEVEL BADGES --- */
+
+/* Hero Badge (WORLD 1-1 Arcade Pill) */
+body.theme-mario .hero-badge {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 11px !important;
+  color: #f8b800 !important;
+  background: rgba(18, 24, 38, 0.95) !important;
+  border: 2px solid #f8b800 !important;
+  border-radius: 24px !important;
+  padding: 8px 20px !important;
+  box-shadow: 3px 3px 0px #000000, 0 0 15px rgba(248, 184, 0, 0.3) !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  letter-spacing: 0.5px !important;
+}
+
+body.theme-mario .pulse-dot {
+  background-color: #4ade80 !important;
+  box-shadow: 0 0 10px #4ade80 !important;
+}
+
+/* Force Single-Column Layout for All Sections in Mario Theme */
+body.theme-mario .about-layout,
+body.theme-mario .skills-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: none !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+body.theme-mario .about-label,
+body.theme-mario .skills-label,
+body.theme-mario .exp-label,
+body.theme-mario .edu-label,
+body.theme-mario .cert-label,
+body.theme-mario .contact-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(18, 24, 38, 0.95) !important;
+  border: 2px solid #f8b800 !important;
+  border-radius: 24px !important;
+  padding: 8px 18px !important;
+  box-shadow: 3px 3px 0px #000000, 0 0 15px rgba(248, 184, 0, 0.3) !important;
+  margin-bottom: 8px !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.theme-mario .label-num {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 13px !important;
+  color: #f8b800 !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+}
+
+body.theme-mario .label-line {
+  width: 24px !important;
+  height: 3px !important;
+  background: #e75910 !important;
+  box-shadow: 0 0 6px #e75910 !important;
+  border-radius: 2px !important;
+}
+
+body.theme-mario .label-text {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 11px !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  letter-spacing: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Arcade Titles */
+body.theme-mario .hero-name,
+body.theme-mario .nav-logo {
+  font-family: 'Press Start 2P', cursive;
+  color: #f8b800 !important;
+  text-shadow: 3px 3px 0px #000000, -1px -1px 0px #e75910;
+  line-height: 1.3;
+}
+
+body.theme-mario .about-heading,
+body.theme-mario .skills-heading,
+body.theme-mario .exp-heading,
+body.theme-mario .contact-heading {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: #f8b800;
+  text-shadow: 3px 3px 0px #000000;
+  line-height: 1.45;
+}
+
+body.theme-mario .project-title,
+body.theme-mario .edu-school {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+  line-height: 1.4;
+}
+
+/* --- CLOUD HOVER ANIMATION & CARDS --- */
+
+/* Authentic Mario Cards with Cloud Hover Glow */
+body.theme-mario .project-card,
+body.theme-mario .about-numbers,
+body.theme-mario .mario-pipe,
+body.theme-mario .edu-gpa,
+body.theme-mario .contact-row {
+  background: rgba(18, 24, 38, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 2px solid #f8b800 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(248, 184, 0, 0.08) !important;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/* Cloud Hover Effect on Cards */
+body.theme-mario .project-card:hover,
+body.theme-mario .about-numbers:hover,
+body.theme-mario .mario-pipe:hover,
+body.theme-mario .edu-gpa:hover,
+body.theme-mario .contact-row:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  border-color: #ffffff !important;
+  background: rgba(26, 35, 56, 0.94) !important;
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.25), 0 0 25px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Cloud Popup Icon on Hover */
+body.theme-mario .project-card::after,
+body.theme-mario .contact-row::after {
+  content: '☁️';
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  font-size: 22px;
+  opacity: 0;
+  transform: translateY(10px) scale(0.6);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+body.theme-mario .project-card:hover::after,
+body.theme-mario .contact-row:hover::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Mario Buttons */
+body.theme-mario .btn-main {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  background: #e75910 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 4px 4px 0px #000000, 0 0 15px rgba(231, 89, 16, 0.5) !important;
+  border-radius: 8px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme-mario .btn-main:hover {
+  background: #ff6b1a !important;
+  transform: translate(-2px, -2px) scale(1.04) !important;
+  box-shadow: 6px 6px 0px #000000, 0 0 25px rgba(255, 255, 255, 0.4) !important;
+}
+
+body.theme-mario .btn-ghost {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  background: rgba(18, 24, 38, 0.9) !important;
+  color: #f8b800 !important;
+  border: 3px solid #f8b800 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  border-radius: 8px !important;
+}
+
+body.theme-mario .btn-ghost:hover {
+  background: #f8b800 !important;
+  color: #000000 !important;
+  transform: translate(-2px, -2px) scale(1.04) !important;
+  box-shadow: 6px 6px 0px #000000, 0 0 20px rgba(248, 184, 0, 0.5) !important;
+}
+
+/* Glassmorphic Navbar Over Mario Landscape */
+body.theme-mario .navbar {
+  background: rgba(11, 15, 25, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 2px solid #f8b800;
+}
+
+body.theme-mario .nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+body.theme-mario .nav-link:hover,
+body.theme-mario .nav-link.active {
+  color: #f8b800;
+  background: rgba(248, 184, 0, 0.15);
+  border: 1px solid rgba(248, 184, 0, 0.3);
+}
+
+/* Sleek Question Block [?] Micro Badge */
+.question-block {
+  width: 34px;
+  height: 34px;
+  background: #f8b800;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: all 0.25s var(--ease-out);
+  margin: 0 6px;
+  vertical-align: middle;
+  box-shadow: 3px 3px 0px #000000, 0 0 10px rgba(248, 184, 0, 0.4);
+}
+
+.question-block:hover {
+  transform: translateY(-3px) scale(1.15);
+  background: #ffcc00;
+  box-shadow: 4px 4px 0px #000000, 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.question-block.hit {
+  background: #e75910;
+  color: #ffffff;
+  animation: blockBounce 0.2s ease-out;
+}
+
+@keyframes blockBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Floating Coin Spawn Effect */
+.floating-coin {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  pointer-events: none;
+  animation: coinPop 0.6s ease-out forwards;
+  z-index: 100;
+}
+
+@keyframes coinPop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -40px) scale(1.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60px) scale(1);
+  }
+}
+
+/* Floating Score Popup (+100) */
+.score-popup {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: #f8b800;
+  text-shadow: 2px 2px 0px #000000;
+  pointer-events: none;
+  animation: scoreFloat 0.8s ease-out forwards;
+  z-index: 101;
+}
+
+@keyframes scoreFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -15px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+}
+
+/* Green Pipe Containers for Skills */
+body.theme-mario .skill-row.mario-pipe {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  padding: 20px !important;
+}
+
+.mario-pipe-rim {
+  background: transparent !important;
+  border-bottom: 2px solid rgba(248, 184, 0, 0.4);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.pipe-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex-shrink: 0;
+}
+
+.mario-pipe:hover .pipe-icon-wrapper {
+  transform: translateY(-4px) scale(1.15);
+}
+
+.mario-pipe-svg {
+  display: block;
+}
+
+.mario-pipe-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  color: #f8b800 !important;
+  text-shadow: 2px 2px 0px #000000;
+  letter-spacing: 1px;
+  flex: 1;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+body.theme-mario .skill-items {
+  padding: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mario-mushroom-icon {
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(2px 2px 0px #000000);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: mushroomPulse 2s ease-in-out infinite;
+}
+
+.mario-mushroom-icon:hover {
+  transform: scale(1.35) rotate(12deg);
+}
+
+@keyframes mushroomPulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.1); }
+}
+
+/* Interactive Mario Character Sprite */
+.mario-character {
+  width: 48px;
+  height: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23e75910' d='M5 1h6v1H5zM4 2h9v1H4zM4 3h3v1H4zM4 4h1v3H4zM7 4h1v1H7zM9 4h1v1H9zM11 4h2v1h-2zM5 5h2v1H5zM8 5h3v1H8zM4 7h8v1H4zM3 8h10v1H3zM2 9h12v1H2zM2 10h4v2H2zM10 10h4v2h-4z'/%3E%3C/path%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.1s;
+  filter: drop-shadow(3px 3px 0px #000000);
+}
+
+.mario-character:hover {
+  transform: scale(1.2);
+}
+
+.mario-character.jump {
+  animation: marioJump 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes marioJump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-40px) scale(1.25);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* High-Contrast Readability Overrides for Paragraphs & Body Text */
+body.theme-mario p,
+body.theme-mario .hero-desc,
+body.theme-mario .about-body p,
+body.theme-mario .project-details p,
+body.theme-mario .project-details li,
+body.theme-mario .project-client,
+body.theme-mario .contact-desc,
+body.theme-mario .cert-meta,
+body.theme-mario .number-desc {
+  color: #f1f5f9 !important;
+  /* Crisp High-Contrast Off-White (Slate 100) */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 1px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 500 !important;
+}
+
+body.theme-mario strong {
+  color: #f8b800 !important;
+  /* High-contrast Gold for bolded keywords */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+body.theme-mario .about-body p {
+  font-size: 16.5px !important;
+  line-height: 1.85 !important;
+}
+
+body.theme-mario .project-details p,
+body.theme-mario .project-details em,
+body.theme-mario .project-details li,
+body.theme-mario .project-details li strong {
+  color: #f8fafc !important;
+  /* Pure Crisp White like standard paragraph text */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+body.theme-mario .project-details li {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 8px !important;
+}
+
+body.theme-mario .project-client {
+  color: #fbbf24 !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+/* Contact Rows & Action Buttons (Mario Arcade Style) */
+body.theme-mario .contact-type {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 11px !important;
+  color: #f8b800 !important;
+  text-shadow: 2px 2px 0px #000000 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 6px !important;
+}
+
+body.theme-mario .contact-value {
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+body.theme-mario .copy-action {
+  font-family: 'Press Start 2P', cursive !important;
+  font-size: 10px !important;
+  background: #e75910 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 0px #000000, 0 0 10px rgba(231, 89, 16, 0.5) !important;
+  transition: all 0.2s var(--ease-out) !important;
+}
+
+body.theme-mario .contact-row:hover .copy-action {
+  background: #ff6b1a !important;
+  color: #ffffff !important;
+  transform: scale(1.08) !important;
+  box-shadow: 4px 4px 0px #000000, 0 0 18px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Mario Cert Cards */
+body.theme-mario .cert-card-item {
+  background: rgba(18, 24, 38, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 2px solid #f8b800 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+body.theme-mario .cert-card-item:hover {
+  transform: translateY(-5px) scale(1.02) !important;
+  border-color: #ffffff !important;
+  background: rgba(26, 35, 56, 0.95) !important;
+  box-shadow: 0 14px 32px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
+   ANIMATED MARIO SECTION DIVIDERS
+   ============================================ */
+
+.mario-section-divider {
+  max-width: var(--container);
+  margin: 40px auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.divider-line {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(248, 184, 0, 0.1) 0%, #f8b800 50%, rgba(248, 184, 0, 0.1) 100%);
+  box-shadow: 0 0 10px rgba(248, 184, 0, 0.4);
+  border-radius: 2px;
+}
+
+.divider-sprite.mario-walk {
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23e75910' d='M5 1h6v1H5zM4 2h9v1H4zM4 3h3v1H4zM4 4h1v3H4zM7 4h1v1H7zM9 4h1v1H9zM11 4h2v1h-2zM5 5h2v1H5zM8 5h3v1H8zM4 7h8v1H4zM3 8h10v1H3zM2 9h12v1H2zM2 10h4v2H2zM10 10h4v2h-4z'/%3E%3C/path%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(3px 3px 0px #000000);
+  animation: marioWalkBounce 1.2s ease-in-out infinite alternate;
+}
+
+.divider-icon {
+  font-size: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 8px rgba(248, 184, 0, 0.6));
+  animation: dividerIconPulse 1.8s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes marioWalkBounce {
+  0% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-8px) scaleX(1.1); }
+  100% { transform: translateY(0) scaleX(1); }
+}
+
+@keyframes dividerIconPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.25) rotate(8deg); }
+}
+
+/* Music Box Toggle Component */
+.mario-music-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 24, 38, 0.95);
+  border: 2px solid #f8b800;
+  padding: 5px 12px 5px 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(248, 184, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+}
+
+.mario-music-box:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 255, 255, 0.35);
+}
+
+.music-box-block {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #f8b800 0%, #e75910 100%);
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.8), 2px 2px 0px #000000;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mario-music-box:hover .music-box-block {
+  transform: scale(1.1) rotate(-6deg);
+}
+
+.music-box-note {
+  font-size: 14px;
+}
+
+.music-box-status {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.mario-music-box.playing {
+  border-color: #4ade80;
+  background: rgba(18, 24, 38, 0.98);
+  box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3), 0 0 12px rgba(74, 222, 128, 0.2);
+}
+
+.mario-music-box.playing .music-box-block {
+  background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
+  animation: musicBlockBounce 1.2s infinite alternate ease-in-out;
+}
+
+.mario-music-box.playing .music-box-status {
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+@keyframes musicBlockBounce {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) scale(1.1) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
