@@ -822,6 +822,23 @@
   border: 1px solid #ef4444;
 }
 
+.revou-box {
+  background: #1d2b4e;
+  border: 1px solid #4f7cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revou-logo-inner {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  color: #4f7cff;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
 .hacktiv8-logo-inner {
   display: flex;
   flex-direction: column;
