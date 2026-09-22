@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aldo Gunawan — Web Developer (Mario Arcade Edition)</title>
+  <meta name="description"
+    content="Aldo Gunawan — Web Developer. Laravel, Vue.js, Next.js. Lulusan Sistem Informasi, Universitas Bunda Mulia." />
+  <meta name="author" content="Aldo Gunawan" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Devicon icons stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>" />
+
+  <script type="module" crossorigin src="/MyPortofolio/assets/index-DCEg_FLp.js"></script>
+  <link rel="stylesheet" crossorigin href="/MyPortofolio/assets/index-B0Em_hJF.css">
+</head>
+
+<body class="theme-mario">
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Mario Drifting Clouds Background -->
+  <div class="mario-cloud-bg">
+    <div class="cloud-item cloud-1"></div>
+    <div class="cloud-item cloud-2"></div>
+    <div class="cloud-item cloud-3"></div>
+    <div class="cloud-item cloud-4"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">ALDO<span class="logo-dot">.</span><span class="question-block"
+          title="Klik untuk koin! ?">?</span></a>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#about" class="nav-link" data-section="about">Tentang</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Proyek</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Pendidikan</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Kontak</a></li>
+      </ul>
+        <button id="music-toggle" class="mario-music-box" title="Klik Music Box untuk Musik Super Mario Bros!">
+          <span class="music-box-block">?</span>
+          <span class="music-box-note">🎵</span>
+          <span class="music-box-status">OFF</span>
+        </button>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero-section">
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span> 🌟 WORLD 1-1 — Web Developer &amp; Analyst
+        </div>
+        <h1 class="hero-name">Aldo<br />Gunawan</h1>
+        <div class="hero-role">
+          <span class="typing-text" id="typing-text"></span><span class="typing-cursor">_</span>
+        </div>
+        <p class="hero-desc">Membangun aplikasi web &amp; sistem informasi terstruktur — dari analisis kebutuhan,
+          rancangan basis data, hingga website yang siap dimainkan!</p>
+
+        <!-- Hero Tech Pills + Question Blocks -->
+        <div class="hero-tech-pills">
+          <span class="tech-pill"><i class="devicon-php-plain colored"></i> PHP</span>
+          <span class="tech-pill"><i class="devicon-javascript-plain colored"></i> JS</span>
+          <span class="tech-pill"><i class="devicon-laravel-original colored"></i> Laravel</span>
+          <span class="tech-pill"><i class="devicon-vuejs-plain colored"></i> Vue.js</span>
+          <span class="tech-pill"><i class="devicon-nextjs-original"></i> Next.js</span>
+          <span class="question-block" title="Klik untuk koin! ?">?</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#experience" class="btn-main">Lihat Proyek Saya ↗</a>
+          <a href="#contact" class="btn-ghost">Hubungi Saya →</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo" id="hero-photo-card">
+          <div class="hero-photo-inner">
+            <img src="./images/aldo.png" alt="Aldo Gunawan" />
+          </div>
+          <div class="photo-glow"></div>
+        </div>
+        <div class="hero-photo-meta">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div class="mario-character" title="Klik Mario untuk melompat!"></div>
+            <div class="mario-mushroom-icon" title="Power-Up Mushroom! Klik untuk suara 🍄">🍄</div>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span class="meta-loc">📍 Tangerang, Indonesia</span>
+              <span class="meta-status"><span class="status-pulse"></span> Terbuka untuk peluang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-label reveal">
+          <span class="label-num">01</span>
+          <span class="label-line"></span>
+          <span class="label-text">Tentang Saya</span>
+        </div>
+        <div class="about-content">
+          <h2 class="about-heading reveal">Lulusan <em>Sistem Informasi</em> yang berfokus pada Full-Stack Web
+            Development &amp; Business Process Analysis. <span class="question-block" title="Klik koin! ?">?</span></h2>
+          <div class="about-body reveal">
+            <p>Saya adalah lulusan <strong>S1 Sistem Informasi dari Universitas Bunda Mulia (IPK 3.48 / 4.00)</strong>
+              yang memiliki keahlian kuat dalam merancang arsitektur basis data, mengembangkan aplikasi web full-stack,
+              serta menganalisis kebutuhan bisnis untuk menghasilkan solusi perangkat lunak yang efisien dan scalable.
+            </p>
+            <p>Berpengalaman memimpin pengembangan sistem dari tahap SDLC (System Development Life Cycle) — mulai dari
+              pemetaan kebutuhan stakeholder, perancangan ERD/UML, pembuatan RESTful API dengan <strong>Laravel</strong>
+              &amp; <strong>Next.js</strong>, hingga optimasi responsivitas antarmuka (UI/UX) berbasis
+              <strong>Vue.js</strong> &amp; <strong>Tailwind/Vanilla CSS</strong>.
+            </p>
+            <p>Mencari peluang karir sebagai <strong>Full-Stack Web Developer / Backend Developer / Business Analyst /
+                IT System Analyst</strong> di mana saya dapat memberikan kontribusi nyata dalam mempercepat transformasi
+              digital perusahaan.</p>
+          </div>
+          <div class="about-numbers reveal">
+            <div class="number-item">
+              <span class="number-value stat-number" data-target="3.48">0</span>
+              <span class="number-desc">IPK (Skala 4.00)</span>
+            </div>
+            <div class="number-sep"></div>
+            <div class="number-item">
+              <span class="number-value stat-number" data-target="2">0</span>
+              <span class="number-desc">Sistem Berhasil Rilis</span>
+            </div>
+            <div class="number-sep"></div>
+            <div class="number-item">
+              <span class="number-value stat-number" data-target="5">0</span>
+              <span class="number-desc">Sertifikasi Profesional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Mario Section Divider 1 -->
+  <div class="mario-section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon" title="Super Star">⭐</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="skills-layout">
+        <div class="skills-label reveal">
+          <span class="label-num">02</span>
+          <span class="label-line"></span>
+          <span class="label-text">Keahlian &amp; Teknologi</span>
+        </div>
+        <div class="skills-content">
+          <h2 class="skills-heading reveal">Tech Stack &amp; Kompetensi Profesional <span class="question-block"
+              title="Klik koin! ?">?</span></h2>
+          <div class="skills-list">
+
+            <!-- Bahasa in Mario Warp Pipe -->
+            <div class="skill-row reveal mario-pipe">
+              <div class="mario-pipe-rim">
+                <div class="pipe-icon-wrapper" title="Warp Pipe">
+                  <svg class="mario-pipe-svg" viewBox="0 0 100 120" width="32" height="36">
+                    <path fill="#22c55e" d="M10 0 h80 v30 h-80 z" />
+                    <path fill="#15803d" d="M10 0 h15 v30 h-15 z M75 0 h15 v30 h-15 z" />
+                    <path fill="#166534" d="M10 30 h80 v5 h-80 z" />
+                    <path fill="#22c55e" d="M20 35 h60 v85 h-60 z" />
+                    <path fill="#15803d" d="M20 35 h12 v85 h-12 z M68 35 h12 v85 h-12 z" />
+                  </svg>
+                </div>
+                <span class="mario-pipe-title">PROGRAMMING LANGUAGES</span>
+              </div>
+              <div class="skill-items" style="padding: 0 16px 16px 16px;">
+                <span class="skill-badge"><i class="devicon-php-plain colored"></i> PHP (Laravel core)</span>
+                <span class="skill-badge"><i class="devicon-javascript-plain colored"></i> JavaScript (ES6+)</span>
+                <span class="skill-badge"><i class="devicon-html5-plain colored"></i> HTML5 (Semantic)</span>
+                <span class="skill-badge"><i class="devicon-css3-plain colored"></i> CSS3 / Modern Flex &amp;
+                  Grid</span>
+                <span class="skill-badge"><i class="devicon-sqldeveloper-plain colored"></i> SQL (Complex Queries &amp;
+                  Joins)</span>
+              </div>
+            </div>
+
+            <!-- Framework in Mario Warp Pipe -->
+            <div class="skill-row reveal mario-pipe" style="margin-top: 20px;">
+              <div class="mario-pipe-rim">
+                <div class="pipe-icon-wrapper" title="Warp Pipe">
+                  <svg class="mario-pipe-svg" viewBox="0 0 100 120" width="32" height="36">
+                    <path fill="#22c55e" d="M10 0 h80 v30 h-80 z" />
+                    <path fill="#15803d" d="M10 0 h15 v30 h-15 z M75 0 h15 v30 h-15 z" />
+                    <path fill="#166534" d="M10 30 h80 v5 h-80 z" />
+                    <path fill="#22c55e" d="M20 35 h60 v85 h-60 z" />
+                    <path fill="#15803d" d="M20 35 h12 v85 h-12 z M68 35 h12 v85 h-12 z" />
+                  </svg>
+                </div>
+                <span class="mario-pipe-title">FRAMEWORKS &amp; LIBRARIES</span>
+              </div>
+              <div class="skill-items" style="padding: 0 16px 16px 16px;">
+                <span class="skill-badge"><i class="devicon-laravel-original colored"></i> Laravel (MVC, Eloquent ORM,
+                  REST API)</span>
+                <span class="skill-badge"><i class="devicon-vuejs-plain colored"></i> Vue.js (Component State
+                  Management)</span>
+                <span class="skill-badge"><i class="devicon-nextjs-original"></i> Next.js (Server Components &amp;
+                  SSR)</span>
+                <span class="skill-badge"><i class="devicon-react-original colored"></i> React.js</span>
+                <span class="skill-badge"><span class="badge-icon-text">⚡</span> Inertia.js (Monolithic Single-Page
+                  Apps)</span>
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div class="skill-row reveal mario-pipe" style="margin-top: 20px;">
+              <div class="mario-pipe-rim">
+                <div class="pipe-icon-wrapper" title="Warp Pipe">
+                  <svg class="mario-pipe-svg" viewBox="0 0 100 120" width="32" height="36">
+                    <path fill="#22c55e" d="M10 0 h80 v30 h-80 z" />
+                    <path fill="#15803d" d="M10 0 h15 v30 h-15 z M75 0 h15 v30 h-15 z" />
+                    <path fill="#166534" d="M10 30 h80 v5 h-80 z" />
+                    <path fill="#22c55e" d="M20 35 h60 v85 h-60 z" />
+                    <path fill="#15803d" d="M20 35 h12 v85 h-12 z M68 35 h12 v85 h-12 z" />
+                  </svg>
+                </div>
+                <span class="mario-pipe-title">DATABASE &amp; DATA MODELING</span>
+              </div>
+              <div class="skill-items" style="padding: 0 16px 16px 16px;">
+                <span class="skill-badge"><i class="devicon-mysql-plain colored"></i> MySQL (Relational DB Design,
+                  Indexing)</span>
+                <span class="skill-badge"><i class="devicon-postgresql-plain colored"></i> PostgreSQL (Data Integrity
+                  &amp; Transactions)</span>
+              </div>
+            </div>
+
+            <!-- Tools & Platform -->
+            <div class="skill-row reveal mario-pipe" style="margin-top: 20px;">
+              <div class="mario-pipe-rim">
+                <div class="pipe-icon-wrapper" title="Warp Pipe">
+                  <svg class="mario-pipe-svg" viewBox="0 0 100 120" width="32" height="36">
+                    <path fill="#22c55e" d="M10 0 h80 v30 h-80 z" />
+                    <path fill="#15803d" d="M10 0 h15 v30 h-15 z M75 0 h15 v30 h-15 z" />
+                    <path fill="#166534" d="M10 30 h80 v5 h-80 z" />
+                    <path fill="#22c55e" d="M20 35 h60 v85 h-60 z" />
+                    <path fill="#15803d" d="M20 35 h12 v85 h-12 z M68 35 h12 v85 h-12 z" />
+                  </svg>
+                </div>
+                <span class="mario-pipe-title">DEVELOPMENT TOOLS</span>
+              </div>
+              <div class="skill-items" style="padding: 0 16px 16px 16px;">
+                <span class="skill-badge"><i class="devicon-git-plain colored"></i> Git (Version Control, Branching,
+                  PRs)</span>
+                <span class="skill-badge"><i class="devicon-github-original"></i> GitHub</span>
+                <span class="skill-badge"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+                <span class="skill-badge"><i class="devicon-figma-plain colored"></i> Figma (UI Mockup &amp;
+                  Prototyping)</span>
+                <span class="skill-badge"><i class="devicon-apache-plain colored"></i> XAMPP / Apache Server</span>
+              </div>
+            </div>
+
+            <!-- Metodologi & Soft Skills in Mario Warp Pipe -->
+            <div class="skill-row reveal mario-pipe" style="margin-top: 20px;">
+              <div class="mario-pipe-rim">
+                <div class="pipe-icon-wrapper" title="Fire Flower Power">
+                  <span style="font-size: 24px; filter: drop-shadow(0 2px 4px #000);">🌻</span>
+                </div>
+                <span class="mario-pipe-title">ANALISIS &amp; KOMPETENSI NON-TEKNIS</span>
+              </div>
+              <div class="skill-items">
+                <span class="skill-badge text-badge">📊 Analisis Kebutuhan Perangkat Lunak (SDLC)</span>
+                <span class="skill-badge text-badge">📐 Pemodelan Data (ERD, DFD, Use Case)</span>
+                <span class="skill-badge text-badge">🚀 Optimasi Performa &amp; Keamanan Web</span>
+                <span class="skill-badge text-badge">🧪 Pengujian Aplikasi (Functional &amp; User Testing)</span>
+                <span class="skill-badge text-badge">🧩 Problem Solving &amp; Logic Thinking</span>
+                <span class="skill-badge text-badge">🤝 Komunikasi Stakeholder &amp; Kerja Tim</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Mario Section Divider 2 -->
+  <div class="mario-section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon" title="Super Star">⭐</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Experience / Projects -->
+  <section id="experience" class="section exp-section">
+    <div class="container">
+      <div class="exp-label reveal">
+        <span class="label-num">03</span>
+        <span class="label-line"></span>
+        <span class="label-text">Portofolio Proyek</span>
+      </div>
+      <h2 class="exp-heading reveal">Pengalaman Pengembangan Sistem <span class="question-block"
+          title="Klik koin! ?">?</span></h2>
+
+      <div class="project-list">
+        <!-- Project 1 -->
+        <article class="project-card reveal" id="project-1">
+          <div class="project-top">
+            <span class="project-num">WORLD 1-1</span>
+            <span class="project-year">2025 – 2026</span>
+          </div>
+          <h3 class="project-title">Sistem Informasi Manajemen Produksi Kaos Berbasis Web</h3>
+          <p class="project-client">📌 PT Hings Subur Makmur — Skripsi &amp; Implemen Lapangan</p>
+          <div class="project-stack">
+            <code class="stack-tag"><i class="devicon-laravel-original colored"></i> Laravel 11</code>
+            <code class="stack-tag"><i class="devicon-vuejs-plain colored"></i> Vue.js 3</code>
+            <code class="stack-tag"><i class="devicon-mysql-plain colored"></i> MySQL</code>
+            <code class="stack-tag">Inertia.js</code>
+          </div>
+          <div class="project-details">
+            <p>Merancang dan merilis sistem informasi produksi berbasis web dari awal (end-to-end) untuk memdigitalisasi
+              alur kerja pabrik garmen dengan skema <em>make-to-order</em>.</p>
+            <ul>
+              <li><strong>Analisis Process Flow</strong>: Melakukan riset langsung ke lapangan, memetakan bottleneck
+                manufaktur, dan merancang ERD basis data terintegrasi.</li>
+              <li><strong>Fitur Utama (5 Modul)</strong>: Dashboard analitik real-time, manajemen katalog produk,
+                pelacakan batch produksi, pencatatan hasil kerja operator, dan generator laporan otomatis.</li>
+              <li><strong>Hak Akses Bertingkat (RBAC)</strong>: Mengimplementasikan otorisasi ketat untuk 3 level peran:
+                <em>Admin</em>, <em>Supervisor Production</em>, dan <em>Operator Field</em>.
+              </li>
+              <li><strong>Dampak Bisnis</strong>: Memangkas waktu pencatatan laporan harian sebesar ~40% dan
+                mengeliminasi risiko kesalahan input data fisik secara signifikan.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal" id="project-2">
+          <div class="project-top">
+            <span class="project-num">WORLD 1-2</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3 class="project-title">ArtKey.Shop — E-Commerce Retail Platform</h3>
+          <p class="project-client">📌 Proyek Mandiri — Platform Penjualan Pakaian &amp; Suvenir Custom</p>
+          <div class="project-stack">
+            <code class="stack-tag"><i class="devicon-nextjs-original"></i> Next.js 14</code>
+            <code class="stack-tag"><i class="devicon-react-original colored"></i> React</code>
+            <code class="stack-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</code>
+            <code class="stack-tag"><i class="devicon-javascript-plain colored"></i> Node.js API</code>
+          </div>
+          <div class="project-details">
+            <p>Membangun platform e-commerce modern berkecepatan tinggi untuk mengubah sistem katalog fisik kios ritel
+              menjadi channel penjualan digital nasional.</p>
+            <ul>
+              <li><strong>Server-Side Rendering (SSR)</strong>: Memanfaatkan Next.js App Router untuk pencarian instan,
+                SEO friendly, dan render produk secara responsif di semua tipe perangkat.</li>
+              <li><strong>Sistem Transaksi &amp; Keranjang</strong>: Mengembangkan fitur dynamic cart, kalkulasi harga
+                real-time, serta filter multi-kategori (ukuran, warna, stok).</li>
+              <li><strong>Management Dashboard (Admin Panel)</strong>: Portal khusus admin untuk pembaruan inventaris
+                otomatis, manajemen pesanan pelanggan, dan pelacakan status pengiriman.</li>
+              <li><strong>Keamanan Data</strong>: Mengimplementasikan enkripsi password, autentikasi berbasis
+                session/token, serta arsitektur basis data relasional PostgreSQL.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Mario Section Divider 3 -->
+  <div class="mario-section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon" title="Super Star">⭐</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Education + Certifications -->
+  <section id="education" class="section edu-section">
+    <div class="container">
+      <div class="edu-layout">
+        <div class="edu-left">
+          <div class="edu-label reveal">
+            <span class="label-num">04</span>
+            <span class="label-line"></span>
+            <span class="label-text">Pendidikan Akhir</span>
+          </div>
+          <div class="edu-main reveal">
+            <div class="edu-school-header">
+              <div class="school-logo-badge" title="Universitas Bunda Mulia">🎓</div>
+              <div>
+                <h3 class="edu-school">Universitas Bunda Mulia</h3>
+                <p class="edu-degree"><strong>Sarjana Komputer (S.Kom) — Sistem Informasi</strong></p>
+                <p class="edu-period">📅 2022 — 2026 | Lulus Tepat Waktu</p>
+              </div>
+            </div>
+
+            <div class="edu-gpa">
+              <div class="gpa-header">
+                <span class="gpa-num">3.48</span>
+                <span class="gpa-of">/ 4.00 (Predikat: Sangat Memuaskan)</span>
+              </div>
+              <div class="gpa-bar">
+                <div class="gpa-fill" data-width="87"></div>
+              </div>
+            </div>
+            <div class="edu-courses">
+              <p class="courses-label">Mata Kuliah Utama &amp; Relevan:</p>
+              <div class="courses-tags">
+                <span class="course-chip">Perancangan &amp; Pemodelan Basis Data</span>
+                <span class="course-chip">Pemrograman Web Lanjut (Full-Stack)</span>
+                <span class="course-chip">Analisis &amp; Perancangan Sistem Informasi</span>
+                <span class="course-chip">Rekayasa Perangkat Lunak (SDLC)</span>
+                <span class="course-chip">Manajemen Proyek TI</span>
+                <span class="course-chip">Keamanan Sistem Informasi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-right">
+          <div class="cert-label reveal">
+            <span class="label-num">05</span>
+            <span class="label-line"></span>
+            <span class="label-text">Sertifikasi &amp; Pelatihan</span>
+          </div>
+          <ul class="cert-list">
+
+            <!-- Cert 1: CertNexus -->
+            <li class="cert-card-item reveal">
+              <div class="cert-logo-box certnexus-box" title="CertNexus Certified">
+                <img src="./images/certnexus.jpg" alt="CertNexus" class="cert-img-logo" />
+              </div>
+              <div class="cert-info-body">
+                <span class="cert-name">GenAIBIZ™ Credential (GAZ-210)</span>
+                <span class="cert-issuer">CertNexus</span>
+                <span class="cert-date">Issued Jan 2026 · Credential ID 171756645</span>
+                <a href="https://certifications.certnexus.com/e41f1364-d267-47e0-bfc6-d5aeee965468" target="_blank" rel="noopener noreferrer" class="cert-credential-btn">Show credential ↗</a>
+              </div>
+            </li>
+
+            <!-- Cert 2: UBM Web Dev -->
+            <li class="cert-card-item reveal">
+              <div class="cert-logo-box ubm-box" title="Universitas Bunda Mulia">
+                <img src="./images/ubm.png" alt="Universitas Bunda Mulia" class="cert-img-logo" />
+              </div>
+              <div class="cert-info-body">
+                <span class="cert-name">90 Menit Paham Web Development</span>
+                <span class="cert-issuer">Universitas Bunda Mulia</span>
+                <span class="cert-date">Issued Sep 2022</span>
+                <a href="https://drive.google.com/file/d/16JpqIUByhK48tv_iuD2UKEnHW1ttkCg1/view" target="_blank" rel="noopener noreferrer" class="cert-credential-btn">Show credential ↗</a>
+              </div>
+            </li>
+
+            <!-- Cert 3: UBM Soft Skill -->
+            <li class="cert-card-item reveal">
+              <div class="cert-logo-box ubm-box" title="Universitas Bunda Mulia">
+                <img src="./images/ubm.png" alt="Universitas Bunda Mulia" class="cert-img-logo" />
+              </div>
+              <div class="cert-info-body">
+                <span class="cert-name">Soft Skill Training Build Your Soft Skills - Shape Your Future Success</span>
+                <span class="cert-issuer">Universitas Bunda Mulia</span>
+                <span class="cert-date">Issued Dec 2024</span>
+                <a href="https://drive.google.com/file/d/1qgUkHMll71JDzBWivI6ELZwPiRWcQVUJ/view" target="_blank" rel="noopener noreferrer" class="cert-credential-btn">Show credential ↗</a>
+              </div>
+            </li>
+
+            <!-- Cert 4: Udemy -->
+            <li class="cert-card-item reveal">
+              <div class="cert-logo-box udemy-box" title="Udemy">
+                <img src="./images/udemy.png" alt="Udemy" class="cert-img-logo" />
+              </div>
+              <div class="cert-info-body">
+                <span class="cert-name">Pemrograman HTML5</span>
+                <span class="cert-issuer">Udemy</span>
+                <span class="cert-date">Issued May 2024</span>
+                <a href="https://drive.google.com/file/d/1KybP8uZifBi3qK8mT5rE3c8xwYXU7P58/view" target="_blank" rel="noopener noreferrer" class="cert-credential-btn">Show credential ↗</a>
+              </div>
+            </li>
+
+            <!-- Cert 5: Hacktiv8 -->
+            <li class="cert-card-item reveal">
+              <div class="cert-logo-box hacktiv8-box" title="Hacktiv8 Indonesia">
+                <img src="./images/hactive8.jpg" alt="Hacktiv8 Indonesia" class="cert-img-logo" />
+              </div>
+              <div class="cert-info-body">
+                <span class="cert-name">Meta Akademi Pembelajaran Virtual</span>
+                <span class="cert-issuer">Hacktiv8 Indonesia</span>
+                <span class="cert-date">Issued Jan 2023</span>
+                <a href="https://drive.google.com/file/d/1zuitsz6Qw5ypE1Ne0yPGX8rSIQaKMX3m/view" target="_blank" rel="noopener noreferrer" class="cert-credential-btn">Show credential ↗</a>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Mario Section Divider 4 -->
+  <div class="mario-section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon" title="Super Star">⭐</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left reveal">
+          <div class="contact-label">
+            <span class="label-num">06</span>
+            <span class="label-line"></span>
+            <span class="label-text">Kontak</span>
+          </div>
+          <h2 class="contact-heading">Mari Bekerja Sama 🏰</h2>
+          <p class="contact-desc">Saya terbuka untuk peluang karir baru, proyek freelance, maupun diskusi seputar
+            pengembangan web. Silakan hubungi saya melalui detail di bawah ini.</p>
+        </div>
+        <div class="contact-right reveal">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aldo30062004@gmail.com&su=Peluang%20Kerja%20/%20Diskusi%20Proyek&body=Halo%20Aldo," target="_blank" rel="noopener noreferrer" class="contact-row" id="contact-email">
+            <div class="contact-info">
+              <span class="contact-type">Email</span>
+              <span class="contact-value">aldo30062004@gmail.com</span>
+            </div>
+            <span class="copy-action">Tulis Email ✉️</span>
+          </a>
+
+          <a href="https://wa.me/6289560746403" target="_blank" rel="noopener noreferrer" class="contact-row" id="contact-whatsapp">
+            <div class="contact-info">
+              <span class="contact-type">Telepon / WhatsApp</span>
+              <span class="contact-value">+62 895-6074-6403</span>
+            </div>
+            <span class="copy-action">Buka ↗</span>
+          </a>
+
+          <a href="https://linkedin.com/in/aldo-gunawan-493496399" target="_blank" rel="noopener noreferrer"
+            class="contact-row" id="contact-linkedin">
+            <div class="contact-info">
+              <span class="contact-type">LinkedIn</span>
+              <span class="contact-value">aldo-gunawan</span>
+            </div>
+            <span class="copy-action">Buka ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Teks berhasil disalin!</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-center">© 2026 Aldo Gunawan — Super Mario Arcade Edition 🏰</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
