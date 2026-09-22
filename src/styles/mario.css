@@ -37,9 +37,9 @@ body.theme-mario::before {
   position: fixed;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(8, 11, 20, 0.55) 0%,
-    rgba(8, 11, 20, 0.65) 40%,
-    rgba(8, 11, 20, 0.78) 100%
+    rgba(8, 11, 20, 0.30) 0%,
+    rgba(8, 11, 20, 0.42) 40%,
+    rgba(8, 11, 20, 0.52) 100%
   );
   pointer-events: none;
   z-index: -1;
@@ -480,31 +480,30 @@ body.theme-mario .project-client,
 body.theme-mario .contact-desc,
 body.theme-mario .cert-meta,
 body.theme-mario .number-desc {
-  color: #f1f5f9 !important;
-  /* Crisp High-Contrast Off-White (Slate 100) */
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 1px rgba(0, 0, 0, 0.8) !important;
-  font-weight: 500 !important;
+  color: #c8d3e0 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
+  font-weight: 400 !important;
 }
 
 body.theme-mario strong {
   color: #f8b800 !important;
-  /* High-contrast Gold for bolded keywords */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 
 body.theme-mario .about-body p {
-  font-size: 16.5px !important;
+  font-size: 16px !important;
   line-height: 1.85 !important;
+  color: #b8c8d8 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
 }
 
 body.theme-mario .project-details p,
 body.theme-mario .project-details em,
 body.theme-mario .project-details li,
 body.theme-mario .project-details li strong {
-  color: #f8fafc !important;
-  /* Pure Crisp White like standard paragraph text */
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
-  font-weight: 500 !important;
+  color: #c8d3e0 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
+  font-weight: 400 !important;
 }
 
 body.theme-mario .project-details li {
