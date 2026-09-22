@@ -47,6 +47,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--bg);
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar { width: 6px; }
