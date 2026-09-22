@@ -6,12 +6,28 @@
 
 /* High-Definition Mario World Landscape Background */
 body.theme-mario {
-  background: url('/images/mario-world-bg.png') center top / cover no-repeat scroll #0b0f19;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  background-color: #0b0f19;
   position: relative;
   font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
+}
+
+/* Separate scrolling background layer for crisp, high-quality rendering */
+body.theme-mario::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: url('./images/mario-world-bg.png') left top / 100% auto repeat-y;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: smooth;
+  image-rendering: high-quality;
+  -ms-interpolation-mode: bicubic;
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Soothing Dark Glass Overlay for Comfort & HD Visual Depth */
@@ -19,11 +35,11 @@ body.theme-mario::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, rgba(12, 16, 26, 0.35) 0%, rgba(12, 16, 26, 0.55) 50%, rgba(12, 16, 26, 0.78) 100%);
-  backdrop-filter: contrast(1.08) saturate(1.1);
-  -webkit-backdrop-filter: contrast(1.08) saturate(1.1);
+  background: linear-gradient(180deg, rgba(12, 16, 26, 0.2) 0%, rgba(12, 16, 26, 0.4) 50%, rgba(12, 16, 26, 0.65) 100%);
+  backdrop-filter: contrast(1.1) saturate(1.2) brightness(1.05);
+  -webkit-backdrop-filter: contrast(1.1) saturate(1.2) brightness(1.05);
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* --- MARIO THEME TYPOGRAPHY & SECTION LEVEL BADGES --- */
