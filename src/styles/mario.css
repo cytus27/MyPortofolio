@@ -20,7 +20,7 @@ body.theme-mario::after {
   left: 0;
   width: 100%;
   min-height: 100%;
-  background: url('./images/mario-world-bg.png') left top / 100% auto repeat-y;
+  background: url('/MyPortofolio/images/mario-world-bg.png') left top / 100% auto repeat-y;
   image-rendering: auto;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: smooth;
