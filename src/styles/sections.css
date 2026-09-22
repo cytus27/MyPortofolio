@@ -1105,6 +1105,44 @@
     gap: 48px;
   }
 
+  /* Education fixes */
+  .edu-school-header {
+    align-items: flex-start;
+  }
+
+  .gpa-header {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .gpa-of {
+    font-size: 13px;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2px;
+  }
+
+  .courses-tags {
+    gap: 6px;
+  }
+
+  .course-chip {
+    font-size: 12px;
+    padding: 5px 10px;
+    word-break: break-word;
+  }
+
+  /* Cert section label fix */
+  .cert-label {
+    overflow: hidden;
+  }
+
+  .cert-label .label-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1196,6 +1234,52 @@
     font-size: 20px;
   }
 
+  /* Education mobile */
+  .edu-gpa {
+    padding: 14px 16px;
+  }
+
+  .gpa-num {
+    font-size: 26px;
+  }
+
+  .gpa-label {
+    font-size: 11px;
+    align-self: center;
+  }
+
+  .gpa-of {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .courses-tags {
+    gap: 5px;
+  }
+
+  .course-chip {
+    font-size: 11px;
+    padding: 5px 9px;
+    word-break: break-word;
+  }
+
+  /* Cert fixes */
+  .cert-card-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .cert-name {
+    font-size: 13px;
+  }
+
+  .cert-logo-box {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  /* Contact */
   .contact-layout {
     gap: 20px;
   }
@@ -1209,23 +1293,6 @@
 
   .contact-value {
     font-size: 14px;
-  }
-
-  .cert-card-item {
-    padding: 12px 14px;
-    gap: 12px;
-  }
-
-  .cert-name {
-    font-size: 13px;
-  }
-
-  .edu-gpa {
-    padding: 16px;
-  }
-
-  .gpa-num {
-    font-size: 26px;
   }
 }
 

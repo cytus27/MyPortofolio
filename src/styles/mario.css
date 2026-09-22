@@ -119,6 +119,36 @@ body.theme-mario .label-text {
   text-shadow: 2px 2px 0px #000000 !important;
   letter-spacing: 1px !important;
   white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Mobile: smaller section label font */
+@media (max-width: 480px) {
+  body.theme-mario .label-text {
+    font-size: 8px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  body.theme-mario .label-num {
+    font-size: 10px !important;
+  }
+
+  body.theme-mario .about-heading,
+  body.theme-mario .skills-heading,
+  body.theme-mario .exp-heading,
+  body.theme-mario .contact-heading {
+    font-size: clamp(13px, 3.5vw, 18px) !important;
+  }
+
+  body.theme-mario .project-title,
+  body.theme-mario .edu-school {
+    font-size: 13px !important;
+  }
+
+  body.theme-mario .mario-pipe-title {
+    font-size: 10px !important;
+  }
 }
 
 /* Arcade Titles */
