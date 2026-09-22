@@ -1019,13 +1019,13 @@
 
   .hero-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 
   .hero-text { order: 1; }
   .hero-photo-wrap {
     order: 0;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-photo {
@@ -1037,6 +1037,10 @@
   .hero-name {
     font-size: 44px;
     letter-spacing: -1px;
+  }
+
+  .hero-role {
+    font-size: 18px;
   }
 
   .hero-scroll { display: none; }
@@ -1080,6 +1084,120 @@
 
   .contact-heading {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 90px var(--gutter) 32px;
+    min-height: auto;
+  }
+
+  .hero-layout {
+    gap: 24px;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .hero-name {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-role {
+    font-size: 16px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-badge {
+    font-size: 10px !important;
+    padding: 6px 12px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-actions a {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-tech-pills {
+    gap: 7px;
+    margin-bottom: 24px;
+  }
+
+  .tech-pill {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .hero-photo-meta {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .about-numbers {
+    padding: 18px 20px;
+    gap: 18px;
+  }
+
+  .number-value {
+    font-size: 28px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .edu-school {
+    font-size: 20px;
+  }
+
+  .contact-layout {
+    gap: 20px;
+  }
+
+  .contact-row {
+    padding: 16px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .contact-value {
+    font-size: 14px;
+  }
+
+  .cert-card-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .cert-name {
+    font-size: 13px;
+  }
+
+  .edu-gpa {
+    padding: 16px;
+  }
+
+  .gpa-num {
+    font-size: 26px;
   }
 }
 

@@ -164,7 +164,6 @@ export function initQuestionBlocks() {
 
 export function initMarioCharacter() {
   const marioElements = document.querySelectorAll('.mario-character');
-
   marioElements.forEach((mario) => {
     mario.addEventListener('click', () => {
       playJumpSound();
@@ -172,6 +171,195 @@ export function initMarioCharacter() {
       setTimeout(() => mario.classList.remove('jump'), 450);
     });
   });
+}
+
+// --- Interactive Photo Profile Game ---
+
+const STAGES = [
+  { name: 'MARIO',       cls: '',           color: '#f8b800', emoji: '🍄', msg: 'SUPER MARIO!' },
+  { name: 'SUPER',       cls: 'stage-super', color: '#4ade80', emoji: '⭐', msg: 'SUPER MODE!' },
+  { name: 'FIRE',        cls: 'stage-fire',  color: '#f97316', emoji: '🔥', msg: 'FIRE POWER!' },
+  { name: 'STAR POWER',  cls: 'stage-star',  color: '#fbbf24', emoji: '🌟', msg: 'STAR POWER!' },
+];
+
+let photoStage = 0;
+let photoClicks = 0;
+let photoScore = 0;
+let photoCoins = 0;
+let photoLives = 3;
+let photoStarTimer = null;
+
+export function initPhotoGame() {
+  const photo = document.getElementById('hero-photo-card');
+  if (!photo) return;
+
+  // Inject HUD into photo
+  photo.insertAdjacentHTML('afterbegin', `
+    <div class="photo-game-hud">
+      <div class="photo-hud-left">
+        <span class="photo-hud-label">ALDO</span>
+        <span class="photo-hud-value" id="photo-score">000000</span>
+        <div class="photo-hp-bar">
+          <span class="photo-hp-heart" id="photo-heart-1">❤️</span>
+          <span class="photo-hp-heart" id="photo-heart-2">❤️</span>
+          <span class="photo-hp-heart" id="photo-heart-3">❤️</span>
+        </div>
+      </div>
+      <div class="photo-hud-right">
+        <span class="photo-hud-label">COINS</span>
+        <span class="photo-hud-value" id="photo-coins">🪙×00</span>
+      </div>
+    </div>
+  `);
+
+  // Inject bottom badge
+  photo.insertAdjacentHTML('beforeend', `
+    <div class="photo-stage-badge">
+      <span class="photo-stage-label" id="photo-stage-label">▶ WORLD 1-1</span>
+      <span class="photo-tap-hint">TAP ME!</span>
+    </div>
+  `);
+
+  // Click / tap interaction
+  photo.addEventListener('click', (e) => {
+    e.stopPropagation();
+    handlePhotoClick(photo, e);
+  });
+
+  // Mouse parallax tilt (desktop only)
+  if (window.innerWidth > 768) {
+    photo.addEventListener('mousemove', (e) => {
+      const rect = photo.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
+      photo.querySelector('.hero-photo-inner').style.transform =
+        `perspective(600px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.02)`;
+    });
+
+    photo.addEventListener('mouseleave', () => {
+      photo.querySelector('.hero-photo-inner').style.transform = '';
+    });
+  }
+}
+
+function handlePhotoClick(photo, e) {
+  photoClicks++;
+  const rect = photo.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  // Shockwave
+  spawnShockwave(photo, x, y);
+
+  // Coins burst (2–4 coins)
+  const count = photoStage >= 3 ? 5 : photoStage >= 2 ? 4 : photoStage >= 1 ? 3 : 2;
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => spawnPhotoCoin(photo, x, y, i, count), i * 60);
+  }
+
+  // Score points
+  const pts = (photoStage + 1) * 100;
+  photoScore += pts;
+  photoCoins += count;
+  updatePhotoHUD();
+
+  // Score popup
+  spawnPhotoScorePop(photo, x, y, `+${pts}`);
+
+  // Sound
+  playCoinSound();
+
+  // Stage up every 5 clicks
+  if (photoClicks % 5 === 0 && photoStage < STAGES.length - 1) {
+    advancePhotoStage(photo);
+  }
+
+  // Star stage: auto-revert after 5s
+  if (photoStage === 3 && !photoStarTimer) {
+    photoStarTimer = setTimeout(() => revertPhotoStage(photo), 5000);
+  }
+
+  // Also update global score
+  currentScore += pts;
+  coinsCollected += count;
+  const scoreEl = document.getElementById('hud-score');
+  const coinEl  = document.getElementById('hud-coins');
+  if (scoreEl) scoreEl.textContent = String(currentScore).padStart(6, '0');
+  if (coinEl)  coinEl.textContent  = String(coinsCollected).padStart(2, '0');
+}
+
+function advancePhotoStage(photo) {
+  // Remove old stage class
+  STAGES.forEach(s => { if (s.cls) photo.classList.remove(s.cls); });
+  photoStage++;
+  const stage = STAGES[photoStage];
+  if (stage.cls) photo.classList.add(stage.cls);
+
+  // Flash banner
+  const banner = document.createElement('div');
+  banner.className = 'photo-powerup-banner';
+  banner.innerHTML = `<span>${stage.emoji}<br>${stage.msg}</span>`;
+  photo.appendChild(banner);
+  playPowerupSound();
+  setTimeout(() => banner.remove(), 1200);
+
+  // Update stage label
+  const label = document.getElementById('photo-stage-label');
+  if (label) label.textContent = `▶ ${stage.name} MODE`;
+
+  // Mark active
+  photo.classList.add('game-active');
+}
+
+function revertPhotoStage(photo) {
+  photoStarTimer = null;
+  STAGES.forEach(s => { if (s.cls) photo.classList.remove(s.cls); });
+  photoStage = 0;
+  photoClicks = 0;
+  const label = document.getElementById('photo-stage-label');
+  if (label) label.textContent = '▶ WORLD 1-1';
+}
+
+function updatePhotoHUD() {
+  const scoreEl = document.getElementById('photo-score');
+  const coinsEl = document.getElementById('photo-coins');
+  if (scoreEl) scoreEl.textContent = String(photoScore).padStart(6, '0');
+  if (coinsEl) coinsEl.textContent = `🪙×${String(photoCoins).padStart(2, '0')}`;
+}
+
+function spawnShockwave(photo, x, y) {
+  const el = document.createElement('div');
+  el.className = 'photo-shockwave';
+  el.style.left = `${x}px`;
+  el.style.top  = `${y}px`;
+  photo.appendChild(el);
+  setTimeout(() => el.remove(), 500);
+}
+
+function spawnPhotoCoin(photo, x, y, index, total) {
+  const el = document.createElement('div');
+  el.className = 'photo-coin';
+  el.textContent = '🪙';
+  const angle = (index / total) * 360 + Math.random() * 40 - 20;
+  const rad = angle * (Math.PI / 180);
+  const dx = Math.sin(rad) * (30 + Math.random() * 20);
+  el.style.left = `${x}px`;
+  el.style.top  = `${y}px`;
+  el.style.setProperty('--dx', `${dx}px`);
+  photo.appendChild(el);
+  setTimeout(() => el.remove(), 900);
+}
+
+function spawnPhotoScorePop(photo, x, y, text) {
+  const el = document.createElement('div');
+  el.className = 'photo-score-pop';
+  el.textContent = text;
+  el.style.left = `${x}px`;
+  el.style.top  = `${y}px`;
+  photo.appendChild(el);
+  setTimeout(() => el.remove(), 1000);
 }
 
 // --- Theme Switcher Logic ---
@@ -337,4 +525,5 @@ export function initMarioGame() {
   initMarioCharacter();
   initThemeSwitcher();
   initMusicToggle();
+  initPhotoGame();
 }

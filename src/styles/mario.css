@@ -683,3 +683,292 @@ body.theme-mario .cert-card-item:hover {
   50% { transform: translateY(-3px) scale(1.1) rotate(6deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
+
+
+/* ============================================
+   INTERACTIVE MARIO PHOTO PROFILE — GAME CARD
+   ============================================ */
+
+/* Outer wrapper becomes a game screen */
+.hero-photo {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Pixel-art scanline overlay on photo */
+.hero-photo-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 18px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.hero-photo:hover .hero-photo-inner::after {
+  opacity: 1;
+}
+
+/* Game HUD overlay — lives, score, coins */
+.photo-game-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 8px 10px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+  border-radius: 18px 18px 0 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.hero-photo:hover .photo-game-hud,
+.hero-photo.game-active .photo-game-hud {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-hud-left,
+.photo-hud-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.photo-hud-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 7px;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #000;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.photo-hud-value {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+  color: #f8b800;
+  text-shadow: 1px 1px 0 #000, 0 0 6px rgba(248,184,0,0.6);
+  line-height: 1;
+}
+
+/* HP bar under score */
+.photo-hp-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.photo-hp-heart {
+  font-size: 9px;
+  line-height: 1;
+  filter: drop-shadow(0 0 3px rgba(255,80,80,0.8));
+  transition: all 0.3s;
+}
+
+.photo-hp-heart.lost {
+  filter: grayscale(1) opacity(0.35);
+}
+
+/* Power-up stage badge at bottom of photo */
+.photo-stage-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 6px 10px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+  border-radius: 0 0 18px 18px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.hero-photo:hover .photo-stage-badge,
+.hero-photo.game-active .photo-stage-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-stage-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 7px;
+  color: #4ade80;
+  text-shadow: 1px 1px 0 #000;
+  line-height: 1.4;
+}
+
+.photo-tap-hint {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 6px;
+  color: rgba(255,255,255,0.7);
+  text-shadow: 1px 1px 0 #000;
+  animation: hintBlink 1.4s step-end infinite;
+}
+
+@keyframes hintBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Power-up stage filters on the img */
+.hero-photo img {
+  transition: filter 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.hero-photo.stage-super img {
+  filter: contrast(1.15) brightness(1.12) saturate(1.2);
+}
+
+.hero-photo.stage-fire img {
+  filter: contrast(1.2) brightness(1.08) saturate(1.5) hue-rotate(8deg);
+}
+
+.hero-photo.stage-star img {
+  filter: contrast(1.1) brightness(1.3) saturate(2) hue-rotate(0deg);
+  animation: starPowerPhoto 0.4s step-end infinite;
+}
+
+@keyframes starPowerPhoto {
+  0%   { filter: contrast(1.1) brightness(1.3) saturate(2) hue-rotate(0deg); }
+  25%  { filter: contrast(1.1) brightness(1.4) saturate(2.2) hue-rotate(60deg); }
+  50%  { filter: contrast(1.1) brightness(1.3) saturate(1.8) hue-rotate(120deg); }
+  75%  { filter: contrast(1.1) brightness(1.4) saturate(2.2) hue-rotate(200deg); }
+  100% { filter: contrast(1.1) brightness(1.3) saturate(2) hue-rotate(280deg); }
+}
+
+/* Photo border color changes per stage */
+.hero-photo.stage-super {
+  border-color: #4ade80 !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.65), 0 0 30px rgba(74, 222, 128, 0.5), inset 0 0 20px rgba(74, 222, 128, 0.1) !important;
+}
+
+.hero-photo.stage-fire {
+  border-color: #f97316 !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.65), 0 0 35px rgba(249, 115, 22, 0.6), inset 0 0 20px rgba(249, 115, 22, 0.15) !important;
+}
+
+.hero-photo.stage-star {
+  animation: starBorderPulse 0.3s linear infinite;
+}
+
+@keyframes starBorderPulse {
+  0%   { border-color: #f8b800 !important; box-shadow: 0 0 40px rgba(248,184,0,0.8) !important; }
+  33%  { border-color: #f97316 !important; box-shadow: 0 0 40px rgba(249,115,22,0.8) !important; }
+  66%  { border-color: #4ade80 !important; box-shadow: 0 0 40px rgba(74,222,128,0.8) !important; }
+  100% { border-color: #818cf8 !important; box-shadow: 0 0 40px rgba(129,140,248,0.8) !important; }
+}
+
+/* Click ripple/shockwave on photo */
+.photo-shockwave {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #f8b800;
+  pointer-events: none;
+  z-index: 10;
+  animation: photoShockwave 0.5s ease-out forwards;
+}
+
+@keyframes photoShockwave {
+  0%   { width: 20px; height: 20px; opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+  100% { width: 120px; height: 120px; opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Floating coins from photo click */
+.photo-coin {
+  position: absolute;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 20;
+  animation: photoCoinFly 0.8s ease-out forwards;
+  filter: drop-shadow(2px 2px 0 #000);
+}
+
+@keyframes photoCoinFly {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.6); }
+  40%  { opacity: 1; transform: translate(var(--dx, -30px), calc(-50% - 60px)) scale(1.2); }
+  100% { opacity: 0; transform: translate(var(--dx, -30px), calc(-50% - 100px)) scale(0.8); }
+}
+
+/* Score popup on photo */
+.photo-score-pop {
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #f8b800;
+  text-shadow: 2px 2px 0 #000;
+  pointer-events: none;
+  z-index: 21;
+  white-space: nowrap;
+  animation: photoScorePop 1s ease-out forwards;
+}
+
+@keyframes photoScorePop {
+  0%   { opacity: 1; transform: translate(-50%, -50%); }
+  100% { opacity: 0; transform: translate(-50%, calc(-50% - 80px)); }
+}
+
+/* Stage-up banner that flashes across photo */
+.photo-powerup-banner {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  border-radius: 18px;
+  pointer-events: none;
+  animation: bannerFlash 1.2s ease-out forwards;
+}
+
+.photo-powerup-banner span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 13px;
+  color: #f8b800;
+  text-shadow: 2px 2px 0 #000, 0 0 20px rgba(248,184,0,0.8);
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 12px;
+}
+
+@keyframes bannerFlash {
+  0%   { opacity: 0; transform: scale(0.85); }
+  15%  { opacity: 1; transform: scale(1.05); }
+  70%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
+}
+
+/* Mobile: always show HUD, no hover needed */
+@media (max-width: 768px) {
+  .photo-game-hud,
+  .photo-stage-badge {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .photo-tap-hint {
+    font-size: 5px;
+  }
+}

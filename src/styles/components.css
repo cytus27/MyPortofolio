@@ -212,4 +212,24 @@
   }
 }
 
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 18px;
+  }
+
+  .mario-music-box {
+    padding: 4px 8px 4px 5px;
+  }
+
+  .music-box-status {
+    display: none;
+  }
+
+  .btn-main,
+  .btn-ghost {
+    font-size: 12px;
+    padding: 12px 18px;
+  }
+}
+
 

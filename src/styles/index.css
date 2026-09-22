@@ -166,4 +166,11 @@ em {
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --section-gap: 56px;
+    --gutter: 16px;
+  }
+}
+
 
