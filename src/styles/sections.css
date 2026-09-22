@@ -698,6 +698,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .course-chip {
@@ -707,6 +709,9 @@
   border: 1px solid var(--border);
   padding: 6px 14px;
   border-radius: 8px;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Certifications & Education Logo Cards */

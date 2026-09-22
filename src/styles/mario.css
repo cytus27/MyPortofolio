@@ -124,10 +124,17 @@ body.theme-mario .label-text {
 }
 
 /* Mobile: smaller section label font */
+@media (max-width: 768px) {
+  body.theme-mario .label-text {
+    font-size: 9px !important;
+    letter-spacing: 0.5px !important;
+  }
+}
+
 @media (max-width: 480px) {
   body.theme-mario .label-text {
-    font-size: 8px !important;
-    letter-spacing: 0.5px !important;
+    font-size: 7.5px !important;
+    letter-spacing: 0.3px !important;
   }
 
   body.theme-mario .label-num {
@@ -148,6 +155,17 @@ body.theme-mario .label-text {
 
   body.theme-mario .mario-pipe-title {
     font-size: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  body.theme-mario .label-text {
+    font-size: 6.5px !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.theme-mario .label-line {
+    width: 16px !important;
   }
 }
 
