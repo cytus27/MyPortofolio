@@ -635,6 +635,17 @@
 .gpa-header {
   display: flex;
   align-items: baseline;
+  gap: 6px;
+}
+
+.gpa-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-right: 2px;
 }
 
 .gpa-num {
