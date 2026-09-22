@@ -480,30 +480,51 @@ body.theme-mario .project-client,
 body.theme-mario .contact-desc,
 body.theme-mario .cert-meta,
 body.theme-mario .number-desc {
-  color: #c8d3e0 !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
-  font-weight: 400 !important;
+  color: #f1f5f9 !important;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.95),
+    0 0 8px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 500 !important;
+}
+
+/* Glassmorphic reading panel behind paragraph areas */
+body.theme-mario .about-body,
+body.theme-mario .contact-desc {
+  background: rgba(8, 12, 22, 0.55) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  border: 1px solid rgba(248, 184, 0, 0.12) !important;
+}
+
+body.theme-mario .project-details {
+  background: rgba(8, 12, 22, 0.50) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-radius: 10px !important;
+  padding: 16px 20px !important;
+  margin-top: 8px !important;
 }
 
 body.theme-mario strong {
   color: #f8b800 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
 }
 
 body.theme-mario .about-body p {
   font-size: 16px !important;
   line-height: 1.85 !important;
-  color: #b8c8d8 !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
+  color: #f1f5f9 !important;
 }
 
 body.theme-mario .project-details p,
 body.theme-mario .project-details em,
 body.theme-mario .project-details li,
 body.theme-mario .project-details li strong {
-  color: #c8d3e0 !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
-  font-weight: 400 !important;
+  color: #f1f5f9 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+  font-weight: 500 !important;
 }
 
 body.theme-mario .project-details li {
